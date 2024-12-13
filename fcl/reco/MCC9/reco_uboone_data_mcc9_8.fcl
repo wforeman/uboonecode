@@ -56,6 +56,9 @@
 
 #include "microboone_wiremod.fcl"
 
+#include "blipreco_configs.fcl"
+#include "particleinventoryservice.fcl"
+
 BEGIN_PROLOG
 
 microboone_reco_data_services:
@@ -63,6 +66,7 @@ microboone_reco_data_services:
 
   PhotonVisibilityService:    @local::microboone_photonvisibilityservice
   OpDigiProperties:           @local::microboone_opdigiproperties
+  ParticleInventoryService:   @local::standard_particleinventoryservice
                               @table::microboone_services_reco
 }
 
@@ -259,6 +263,9 @@ microboone_reco_data_producers:
 
     #Wire Modification
     wiremod: @local::microboone_wiremod
+    
+    # Blip reco producer
+    blipreco: @local::microboone_blipreco
 
 }
 
